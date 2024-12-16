@@ -15,7 +15,6 @@ function ToastPlayground() {
   useEffect(() => {
     const handleKeyDown = (event) => {
       if (event.key === 'Enter') {
-        console.log('Enter key pressed');
         addToast({ message, variant });
       }
     };
@@ -26,7 +25,6 @@ function ToastPlayground() {
       window.removeEventListener('keydown', handleKeyDown);
     };
   }, [message, variant, toasts]);
-  useEffect(() => {console.log(toasts) }, [ toasts]);
 
 
   return (
