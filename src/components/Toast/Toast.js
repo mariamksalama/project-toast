@@ -22,7 +22,7 @@ const ICONS_BY_VARIANT = {
 function Toast({ closeToast, message, variant}) {
   const Icon = ICONS_BY_VARIANT[variant];
   return (
-    <div className={`${styles.toast} ${styles}`+{variant}}>
+    <div className={`${styles.toast} ${styles[variant]}`}>
       <div className={styles.iconContainer}>
         <Icon size={24} />
       </div>
