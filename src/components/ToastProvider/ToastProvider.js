@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import useEscapeKey from '../../hooks/useEscapeKey';
 export const ToastContext = React.createContext();
 function ToastProvider({ children }) {
@@ -10,7 +10,8 @@ function ToastProvider({ children }) {
   const removeToast = (id) => {
     setToasts((prev) => prev.filter((toast) => toast.id !== id));
   };
-  useEscapeKey(()=>{setToasts([])});
+  const handlescape = useCallback(()=>{setToasts([])},[]);
+  useEscapeKey(handlescape);
 
   
     

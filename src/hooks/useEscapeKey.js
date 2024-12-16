@@ -14,7 +14,7 @@ export default function useEscapeKey(setToasts) {
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
     };
-},[]);
+},[setToasts]);
 
 
 
